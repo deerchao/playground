@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CSnakes.Runtime" Version="1.0.21" />
+      <PackageReference Include="OpenCvSharp4" Version="4.10.0.20240616" />
+      <PackageReference Include="OpenCvSharp4.Extensions" Version="4.10.0.20240616" />
+      <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <AdditionalFiles Include="infer.py">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </AdditionalFiles>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Compile Update="Form3D.cs">
+        <SubType>Form</SubType>
+      </Compile>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Update="requirements.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+</Project>
